@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="es-es" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="es-es" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="es-es" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es-es" class="no-js"> <!--<![endif]--><head>
+  {% block meta_tags %}
+  <meta name="description" content="Default Description" />
+    <meta name="keywords" content="bla bla bla" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+  {% endblock %}
+    
+  <title>{% block title %}Title{% endblock %}</title> 
+
+<link href='{{ STATIC_URL }}css/base.css?id=1' rel='stylesheet' type='text/css'> 
+<link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}css/screen.less?id=1"/>  
+{% block css %}
+{% endblock %}
+  
+{% block scripts_js %}
+<script src="{{ STATIC_URL }}js/lib/less-1.1.5.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}js/lib/modernizr.custom.2.5.3.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.microsoft.com/ajax/jquery.cycle/2.88/jquery.cycle.all.js" type="text/javascript" charset="utf-8"></script> 
+{% endblock %}
+<script src="{{ STATIC_URL }}js/base.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28665450-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+{% block scripts_js_module %}{% endblock %} 
+<!--[if lt IE 10]>
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/ieonly.css" type="text/css" media="screen" />
+<![endif]-->
+</head> 
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=242214362497322";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="wrapper" id="wrapper" >
+  {% include 'website/header.html' %}
+
+  {% block content %}{% endblock %}
+
+  {% include 'website/footer.html' %}
+
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-000000-00']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> 
+</body>
+</html> 
